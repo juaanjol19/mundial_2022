@@ -1,0 +1,33 @@
+{% extends "home/index.html" %}
+{% load static %}
+
+{% block my_blog_title %}
+Homework
+{% endblock %}
+
+{% block my_blog_header %}
+    <header class="masthead" style="background-image: url('../../static/home/assets/img/mundial_2022.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-15 col-lg-16 col-xl-14">
+                    <div class="site-heading">
+                        <h1>Listado de Partidos</h1>
+                        <span class="subheading">My blog CoderHouse</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block my_blog_content %}
+    {% for matchgame in matchgames %}
+        <!-- Post preview-->
+        <div class="post-preview">
+            <h2 class="post-title">Encuentro : {{matchgame.t_local }} {{matchgame.t_away}}</h2>
+            <h3 class="post-subtitle">Se jugara en la fecha: {{ matchgame.date }}</h3>
+        </div>
+        <!-- Divider-->
+        <hr class="my-4" />
+    {% endfor %}
+{% endblock %}
